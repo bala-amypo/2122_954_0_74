@@ -1,35 +1,13 @@
-package com.example.demo.service;
+package com.example.demo;
 
-import java.util.*;
-import org.springframework.stereotype.Service;
-import com.example.demo.entity.Student;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Service   
-public class StudentServiceImpl implements StudentService {
+@SpringBootApplication
+public class DemoApplication {
 
-    private final Map<Long, Student> store = new HashMap<>();
-    private long counter = 1;
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
 
-    @Override
-    public Student insertStudent(Student st) {
-        st.setId(counter++);
-        store.put(st.getId(), st);
-        return st;
-    }
-
-    @Override
-    public List<Student> getAllStudents() {
-        return new ArrayList<>(store.values());
-    }
-
-    @Override
-    public Optional<Student> getOneStudent(Long id) {
-        return Optional.ofNullable(store.get(id));
-    }
-
-    @Override
-    public void deleteStudent(Long id) {
-        store.remove(id);
-    }
 }
- 
