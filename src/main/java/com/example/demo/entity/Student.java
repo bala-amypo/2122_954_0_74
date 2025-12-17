@@ -13,18 +13,18 @@ import jakarta.persistence.Id;
 public class Student {
 @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String email;
     private LocalDate dob;
     private Float cgpa;
 
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -59,7 +59,7 @@ public class Student {
     public void setCgpa(Float cgpa) {
         this.cgpa = cgpa;
     }
-    public Student(Float cgpa, LocalDate dob, String email, Long id, String name) {
+    public Student(Float cgpa, LocalDate dob, String email, Integer id, String name) {
         this.cgpa = cgpa;
         this.dob = dob;
         this.email = email;

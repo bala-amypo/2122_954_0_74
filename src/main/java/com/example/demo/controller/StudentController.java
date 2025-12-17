@@ -32,13 +32,13 @@ public class StudentController {
 
     // READ ONE
     @GetMapping("/{id}")
-    public Optional<Student> getById(@PathVariable Long id) {
+    public Optional<Student> getById(@PathVariable Integer id) {
         return studentService.getOneStudent(id);
     }
 
     // UPDATE
     @PutMapping("/{id}")
-    public String updateStudent(@PathVariable Long id, @RequestBody Student st) {
+    public String updateStudent(@PathVariable Integer id, @RequestBody Student st) {
         Optional<Student> studentOpt = studentService.getOneStudent(id);
 
         if (studentOpt.isPresent()) {
@@ -56,7 +56,7 @@ public class StudentController {
 
     // DELETE
     @DeleteMapping("/{id}")
-    public String deleteStudent(@PathVariable Long id) {
+    public String deleteStudent(@PathVariable Integer id) {
         Optional<Student> student = studentService.getOneStudent(id);
 
         if (student.isPresent()) {
