@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.shagyeeen.entity.Student;
 import com.example.shagyeeen.service.StudentService;
 
-@RestControllerpublic class StudentController {
+@RestController
+public class StudentController {
 
-    @AutowiredStudentService studentService;
+    @Autowired
+    StudentService studentService;
 
     @PostMapping("/PostStudent")
     public Student postStd(@RequestBody Student st ) {
